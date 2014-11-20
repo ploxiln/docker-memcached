@@ -6,7 +6,8 @@ EXPOSE 11211
 ENV MAX_MEM 64
 ENV MAX_CONN 1024
 
-RUN apt-get --assume-yes --quiet update && DEBIAN_FRONTEND=noninteractive \
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get --assume-yes --quiet update && \
     apt-get --assume-yes --quiet --no-install-recommends install memcached
 
 USER nobody

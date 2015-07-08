@@ -11,6 +11,7 @@ DATE       = $(shell date +%Y-%m-%d)
 BASE_IMAGE = $(shell awk '/^FROM/ {print $$2}' Dockerfile)
 
 build: build/memcached
+	${DOCKER} pull ${BASE_IMAGE}
 	${DOCKER} build --tag=${IMAGE} .
 
 push:

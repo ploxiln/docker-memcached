@@ -1,8 +1,7 @@
 # memcached docker image
 
-A docker image for running memcached, based on the Dockerfile from
-https://github.com/SylvainLasnier/memcached but built on `debian/7`
-so the resulting image is less than half the size (about 126 MiB).
+A docker image for running memcached, built as a static binary and
+based on the busybox image so it's just a handful of megabytes.
 
 Adjust with environment variables (`--env=...`):
 
@@ -13,7 +12,9 @@ Example:
 
     docker run -d -p 11211:11211 --name memcached -e MAX_MEM=1024 -e MAX_CONN=2000 ploxiln/memcached
 
-See the Dockerfile on [GitHub](https://github.com/ploxiln/docker-memcached)
+See the Dockerfile on [GitHub](https://github.com/ploxiln/docker-memcached).
+Building requires the basic linux build tools, and the libevent library and development headers
+(`libevent-dev` on debian and related distros).
 
 Built images are on [Docker Hub](https://registry.hub.docker.com/u/ploxiln/memcached/)
 

@@ -1,7 +1,7 @@
 # memcached docker image
 
-A docker image for running memcached, built as a static binary and
-based on the busybox image so it's just a handful of megabytes.
+A docker image for running memcached, based on the busybox image
+and linked with glibc. It's just a handful of megabytes.
 
 Adjust with environment variables (`--env=...`):
 

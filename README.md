@@ -3,14 +3,15 @@
 A docker image for running memcached, based on the busybox image
 and linked with glibc. It's just a handful of megabytes.
 
-Adjust with environment variables (`--env=...`):
+Adjust with environment variables:
 
-  * `MAX_MEM` defaults to 64 (in megabytes)
-  * `MAX_CONN` defaults to 1024
+  * `MAX_MEM` defaults to 128 (in megabytes)
+  * `MAX_CONN` defaults to 512
+  * `OPTIONS` defaults to `hash_algorithm=murmur3,maxconns_fast`
 
 Example:
 
-    docker run -d -p 11211:11211 --name memcached -e MAX_MEM=1024 -e MAX_CONN=2000 ploxiln/memcached
+    docker run -d -p 11211:11211 --name memcached -e MAX_MEM=500 -e MAX_CONN=2000 ploxiln/memcached
 
 See the Dockerfile on [GitHub](https://github.com/ploxiln/docker-memcached).
 Building requires the basic linux build tools, and the libevent library and development headers

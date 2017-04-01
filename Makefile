@@ -1,5 +1,5 @@
 IMAGE = ploxiln/memcached
-VERSION = 1.4.34
+VERSION = 1.4.36
 
 DOCKER  = sudo docker
 SRCDIR  = memcached-${VERSION}

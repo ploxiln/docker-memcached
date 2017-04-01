@@ -14,4 +14,4 @@ COPY memcached /bin/memcached
 
 USER nobody
 # need shell form for variables to work
-CMD exec /bin/memcached -v -m $MAX_MEM -c $MAX_CONN -o $OPTIONS
+CMD exec memcached -v -m $MAX_MEM -c $MAX_CONN -o $OPTIONS
